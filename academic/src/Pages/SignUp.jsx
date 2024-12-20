@@ -46,120 +46,108 @@ function SignUp() {
 
   }
 
-
   return (
     <div class="container">
-      <div class="row justify-content-md-center">
-        <div class="col-col-lg-5">
-          <p class="text-start large-text">
-            <b>Create Account</b>
-          </p>
-          <div class="row">
-            <div class="col">
-              <label for="lastnameController" className="form-label">
-                First Name
+        <div class="LeftSideContainer">
+              <p className="text-start-large-text">
+                <b>Create Account</b>
+              </p>
+          
+              <label for="firstnameController" className="firstNameLabel">
+                First Name&emsp;
               </label>
               <input
                 type="text"
-                class="form-control"
-                id="firstname"
+                className="firstnameInput"
                 value={firstname}
                 onChange={(event) => {
                   setFirstname(event.target.value);
                 }}
               />
-            </div>
-            <div class="col">
-              <label for="lastnameController" class="form-label">
-                Last Name
+          
+          
+              <label for="lastnameController" class="lastNameLabel">
+                Last Name&emsp;
               </label>
               <input
                 type="text"
-                class="form-control"
-                id="lastname"
+                className="lastnameInput"
                 value={lastname}
                 onChange={(event) => {
                   setLastname(event.target.value);
                 }}
               />
-            </div>
-          </div>
-          <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label-email">
-              Email address
+          
+            <label for="exampleFormControlInput1" className="emailLabel">
+              Email address&emsp;
             </label>
             <input
               type="email"
-              class="form-control"
-              id="email"
-              placeholder="name@example.com"
+              className="emailInput"
+              placeholder="&emsp;name@example.com"
               value={email}
               onChange={(event) => {
                 setEmail(event.target.value);
               }}
             />
-          </div>
-          <div class="selectUser">
-          <label id="form-label-userType">Choose the User Type: &emsp;</label>
-            <select name="userType" id="userType" value={usertype} >
-                <option value="Select"></option>
+          
+          
+            <label className="chooseLabel">Choose the User Type: &emsp;</label>
+            <select name="userType" className="userRole" value={usertype} >
+                <option value="Select">- Select -</option>
                 <option value="advisor">Advisor</option>
                 <option value="student">Student</option>
             </select>
-          </div>
-          <div class="mb-3">
-            <label for="inputPassword5" class="form-label-password">
-              Password
+          
+          
+            <label for="passwordInput" className="passwordLabel">
+              Password&emsp;
             </label>
             <input
               type="password"
-              class="form-control"
-              id="password"
+              className="passwordInput"
               value={password}
               onChange={(event) => {
                 setPassword(event.target.value);
               }}
             />
-          </div>
-          <div class="mb-3">
-            <label for="confirmPasswordController" class="form-label-conPassword">
-              Confirm Password
+        
+          
+            <label for="confirmPasswordController" className="confirmPasswordLabel">
+              Confirm Password&emsp;
             </label>
             <input
               type="password"
-              class="form-control"
-              id="confirmpassword"
+              className="confirmPasswordInput"
               value={confirmpassword}
               onChange={(event) => {
                 setConfirmpassword(event.target.value);
               }}
             />
-          </div>
-
-          <div class="col-12 d-flex justify-content-center">
+          
+        
             <button
-              class="btn btn-primary btn-block"
+              class="signUpButton"
               type="submit"
               onClick={save}
             >
-              Sign Up
+              <b>Sign Up</b>
             </button>
           </div>
-        </div>
-      </div>
-      <div class="col-md-auto">
-            <div className="signup-RightHalf">
-                <h3 className="signup-LoginText">
-                    <b>Already have an account?</b>
-                </h3>
-                <h4 className="signup-LoginText2">
-                    Sign in Here
-                </h4>
-                <button className="signup-LoginButton" onClick={Login}>
-                    <b>Sign in</b>
-                </button>
-            </div>
-        </div>
+        
+      
+          <div className="signup-RightHalf">
+              <h3 className="signup-LoginText">
+                  <b>Already have an account ?</b>
+              </h3>
+              <h4 className="signup-LoginText2">
+                  Sign in Here
+              </h4>
+              <button className="signup-LoginButton" onClick={Login}>
+                  <b>Sign in</b>
+              </button>
+          </div>
+        
     </div>
   );
 }
