@@ -53,10 +53,11 @@ body{
     position: fixed;
     left: 8%;
     top: 5%;
-    background-color: rgb(238, 245, 245);
+    background-color: rgb(242, 247, 247);
     height: 90%;
     width: 50%;
     padding-left: 15px;
+    border-radius: 10px;
     
 }
 

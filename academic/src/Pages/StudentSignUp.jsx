@@ -1,50 +1,67 @@
 import React, { useState } from "react";
-import './SignUp.css'
+import './StudentSignUp.css'
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-function SignUp() {
+function StudentSignUp() {
+  
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const usertype = null;
   const [password, setPassword] = useState("");
   const [confirmpassword, setConfirmpassword] = useState("");
-  let nav = useNavigate()
+  const nav = useNavigate();
 
   async function save(event) {
     event.preventDefault();
-    try {
-      await axios.post("http://localhost:8080/api/register/account", {
-        firstName: firstname,
-        lastName:lastname,
-        userType:usertype,
-        email: email,
-        password: password,
-        confirmPassword: confirmpassword,
-      }).then((res) =>
-        {
-          console.log(res.data);
-      if(res.data === "Registration Successful"){
-        alert("Registation Successfully");
+    if(firstname === ""){
+      alert("First Name cannot be empty");
+    }else if(lastname === ""){
+      alert("Last Name cannot be empty");
+    }else if(email === ""){
+      alert("email cannot be empty");
+    }else if(password === ""){
+      alert("password cannot be empty");
+    }else if(password !== confirmpassword){
+      alert("Confirm password does not match");
+    }else{
+      try {
+        await axios.post("http://localhost:8080/api/register/account", {
+          firstName: firstname,
+          lastName:lastname,
+          // userType:usertype,
+          email: email,
+          password: password,
+        }).then((res) =>
+          {
+            console.log(res.data);
+        if(res.data === "Registration Successful"){
+          alert("Registation Successfully");
+          nav('/Login');
+        }else if(res.data === "Email Already Exists"){
+          alert("Email Already Exists");
+        }
       }
-    }
-    );
-    } catch (err) {
-      alert(err);
+      );
+      } catch (err) {
+        alert(err);
+      }
     }
   }
 
   async function Login(Event)  {
     Event.preventDefault();
     try{
-        nav('./Login');
+        nav('/Login');
     }catch(err){
         alert(err)
 
     }
 
   }
+
+
 
   return (
     <div class="container">
@@ -127,7 +144,7 @@ function SignUp() {
           
         
             <button
-              class="signUpButton"
+              class="StudentSignUpButton"
               type="submit"
               onClick={save}
             >
@@ -152,4 +169,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default StudentSignUp;

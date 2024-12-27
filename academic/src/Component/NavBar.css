@@ -1,0 +1,55 @@
+
+
+.navBar{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    padding: 10px;
+    display: flex;
+    width: 97%;
+    height: 100px;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    border-radius: 20px;
+    justify-content: space-between;
+    box-shadow: 0 5px 15px rgba(0, 0, 0 , 0.25);
+    
+}
+
+#title{
+    position: relative;
+    align-self: center;
+    cursor: pointer;
+    padding-left: 20px;
+    font-size: 38px;
+    
+}
+
+#homeBtn{
+    position: relative;
+    cursor: pointer;
+}
+
+#aboutBtn{
+    position: relative;
+    cursor: pointer;
+}
+
+#contactUsBtn{
+    position: relative;
+    cursor: pointer;
+}
+
+ul{
+    text-align: center;
+    list-style: none;
+
+}
+
+ul li{
+    display: inline-block;
+    margin: 10px 40px;
+    text-shadow :transparent;
+    text-shadow: 1px 1px 5px #9c9797;
+    font-size: 22px;
+}
