@@ -1,0 +1,198 @@
+body{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+.container{
+  display: flex;
+  /* margin-top: 80px; */
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  background-color: white;
+}
+
+.signup-RightHalf{
+    text-align: center;
+    height: 90%;
+    position: fixed;
+    right: 8%;
+    width: 500px;
+    top: 5%;
+    background-color: #75ABEA;
+    align-content: center;
+    border-radius: 5px;
+
+}
+
+.signup-LoginButton{
+    background-color: black;
+    border: 0;
+    width: 85px;
+    height: 35px;
+    border-radius: 5px;
+    color: white;
+    font-size: large;
+    cursor: pointer;
+}
+
+
+.signup-LoginText{
+    font-size: x-large;
+}
+
+.signup-LoginText2{
+    color: white;
+    font-size: larger;
+}
+
+.LeftSideContainer{
+    display: flex;
+    position: fixed;
+    left: 8%;
+    top: 5%;
+    background-color: rgb(242, 247, 247);
+    height: 90%;
+    width: 50%;
+    padding-left: 15px;
+    border-radius: 10px;
+    
+}
+
+.text-start-large-text{
+    font-size: xx-large;
+    position: absolute;
+    
+}
+
+.signUpButton{
+    position: absolute;
+    bottom: 80px;
+    left: 250px;
+    color: white;
+    font-size: larger;
+    background-color: rgb(9, 170, 9);
+    border-radius: 10px;
+    width: 130px;
+    height: 40px;
+    border: 0px;
+    cursor: pointer;
+    
+}
+
+.firstNameLabel{
+    position: absolute;
+    top: 150px;
+    height: 30px;
+    width: 200px;
+    text-align: left;
+}
+
+.firstnameInput{
+    position: absolute;
+    top: 150px;
+    left: 200px;
+    width: 350px;
+    height: 20px;
+    border-width: 0.1cap;
+    border-radius: 5px;
+
+}
+
+.lastNameLabel{
+    position: absolute;
+    top: 200px;
+    height: 30px;
+    width: 200px;
+    text-align: left;
+}
+
+.lastnameInput{
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    width: 350px;
+    height: 20px;
+    border-width: 0.1cap;
+    border-radius: 5px;
+
+}
+
+.emailLabel{
+    position: absolute;
+    top: 250px;
+    height: 30px;
+    width: 200px;
+    text-align: left;
+}
+
+.emailInput{
+    position: absolute;
+    top: 250px;
+    left: 200px;
+    width: 350px;
+    height: 20px;
+    border-width: 0.1cap;
+    border-radius: 5px;
+
+}
+
+.chooseLabel{
+    position: absolute;
+    top: 300px;
+    height: 30px;
+    width: 200px;
+    text-align: left;
+}
+
+.userRole{
+    position: absolute;
+    top: 300px;
+    left: 250px;
+    width: 300px;
+    height: 25px;
+    border-width: 0.1cap;
+    border-radius: 5px;
+
+}
+
+.passwordLabel{
+    position: absolute;
+    top: 350px;
+    height: 30px;
+    width: 200px;
+    text-align: left;
+}
+
+.passwordInput{
+    position: absolute;
+    top: 350px;
+    left: 200px;
+    width: 350px;
+    height: 20px;
+    border-width: 0.1cap;
+    border-radius: 5px;
+
+}
+
+.confirmPasswordLabel{
+    position: absolute;
+    top: 400px;
+    height: 30px;
+    width: 200px;
+    text-align: left;
+}
+
+.confirmPasswordInput{
+    position: absolute;
+    top: 400px;
+    left: 200px;
+    width: 350px;
+    height: 20px;
+    border-width: 0.1cap;
+    border-radius: 5px;
+
+}
+
