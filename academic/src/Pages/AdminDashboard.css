@@ -10,7 +10,7 @@ body {
 .admin-dashboard {
   display: flex;
   flex-direction: row;
-  height: 100vh;
+  height: auto;
 }
 
 /* Top Bar */
@@ -60,6 +60,26 @@ body {
   background-color: #5a6268;
 }
 
+.admin-icon {
+  margin-right: 8px; 
+  font-size: 20px;    
+  vertical-align: middle; 
+}
+.admin-logoutbutton {
+  background-color: #ff4d4d;  /* Red color for logout */
+  color: white;
+  border: none;
+  margin: 10px 15px;
+  padding: 14px;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.admin-logoutbutton:hover {
+  background-color: #ff1a1a;
+}
 
 
 .admin-content {
@@ -79,7 +99,9 @@ body {
 }
 
 .admin-card {
-  background-color: #e9ecef;
+  background: #373B44;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   padding: 20px;
   border-radius: 8px;
   text-align: center;
@@ -94,15 +116,17 @@ body {
 
 .admin-card h3 {
   margin: 0 0 10px;
-  color: #495057;
+  color: #ffffff;
+  
 }
 
 .admin-card p {
   font-size: 24px;
   font-weight: bold;
+  color: #ffffff;
 }
 
- table {
+ .data-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
@@ -112,19 +136,19 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-table th, table td {
+.data-table th, .data-table td {
   border: 1px solid #dee2e6;
   padding: 15px;
   text-align: left;
 }
 
-table th {
+.data-table th {
   background-color: #f1f1f1;
   font-weight: bold;
   color: #495057;
 }
 
-button {
+.delete-button {
   padding: 8px 12px;
   border: none;
   border-radius: 5px;
@@ -132,20 +156,32 @@ button {
   transition: background-color 0.3s;
 }
 
-button:first-of-type {
-  background-color: #28a745;
-  color: white;
-}
 
-button:first-of-type:hover {
-  background-color: #218838;
-}
-
-button:last-of-type {
+.delete-button {
   background-color: #dc3545;
   color: white;
 }
 
-button:last-of-type:hover {
+.delete-button:hover {
   background-color: #c82333;
 } 
+
+.admin-chart {
+  width: 80%; /* Adjust the width as needed */
+  height: 600px; /* Set a fixed height */
+  margin: auto; /* Center the chart */
+}
+
+.search-container {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.search-container input {
+  padding: 8px;
+  font-size: 16px;
+  width: 50%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
