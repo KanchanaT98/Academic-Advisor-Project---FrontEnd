@@ -40,7 +40,8 @@
     width: 50%;
     height: 200px;
     background-color: transparent;
-    border: solid #312f2f;
+    border-color: transparent;
+    border: solid #464343;
     border-radius: 20px;
 
 }
@@ -48,14 +49,14 @@
 #welcomePagesignUpButton{
     position: absolute;
     bottom: 30px;
-    left: 43%;
-    width: 100px;
+    left: 42%;
+    width: 120px;
     height: 40px;
-    background-color: transparent;
+    background-color:rgb(219, 128, 9);
     cursor: pointer;
-    border: 2px solid;
+    border: 0px;
     border-color: #ffffff;
-    border-radius: 5px;
+    border-radius: 20px;
     color: white;
     font-size: large;
 
