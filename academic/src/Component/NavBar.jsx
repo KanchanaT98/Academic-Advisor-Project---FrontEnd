@@ -17,6 +17,11 @@ const NavBar = () => {
         }else if(location.pathname==='/AdminDashboard'){
             return { text:"Home", action: () => nav('/AdvisorDashboard')};
         }
+        else if(location.pathname==='/ContactUs'){
+            return { text:"Home", action: () => nav('/Welcome')};
+        }else if(location.pathname==='/AboutUs'){
+            return { text:"Home", action: () => nav('/Welcome')};
+        }
     }
 
     const { text, action } = getButtonDetails();

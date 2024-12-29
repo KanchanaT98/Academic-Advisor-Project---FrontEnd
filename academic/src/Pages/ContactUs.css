@@ -1,0 +1,46 @@
+.ContactOwnerComponent{
+    position: absolute;
+    left: 50px;
+    padding-top:30px;
+    padding-left: 50px;
+    background-color: white;
+
+}
+
+#senderEmail{
+    position: absolute;
+    top: 140px;
+    height: 40px;
+    width: 1000px;
+    justify-content: center;
+}
+
+#receiverEmail{
+    position: absolute;
+    top: 200px;
+    height: 40px;
+    width: 1000px;
+    justify-content: center;
+}
+
+#emailBody{
+    position: absolute;
+    top: 260px;
+    height: 200px;
+    width: 1000px;
+
+}
+
+.contactSubmitBtn{
+    background-color: rgb(21, 157, 21);
+    text-align: center;
+    color: white;
+    border-radius: 15px;
+    width: 150px;
+    border: 0;
+    height: 45px;
+    position: relative;
+    left: 850px;
+    top: 400px;
+    padding: 3px;
+}

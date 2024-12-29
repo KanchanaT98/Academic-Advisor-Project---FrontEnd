@@ -13,17 +13,19 @@ const Login = () => {
   async function submit(event) {
     event.preventDefault();
     try {
-      await axios.post("http://127.0.0.1:8080/api/login", {
+      await axios.post("http://localhost:8080/api/users/login", {
         email: email,
         password: password,
-      },
+      }
+      ,
       {
         headers: {
             Authorization: "", // Add the password as Basic Auth header
             "Content-Type": "application/json", // Ensure the content type is JSON
         },
         withCredentials: true,
-      })
+      }
+    )
       .then((res) =>
       {
         console.log(res.data);
