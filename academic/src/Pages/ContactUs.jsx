@@ -1,46 +1,40 @@
-import React from 'react';
-import './ContactUs.css';
-import { useNavigate } from 'react-router-dom'; 
-import axios from "axios";
-import { useState } from "react";
+import React, { useRef } from 'react';
+import './ContactUs.css'; 
 import NavBar from '../Component/NavBar';
+import emailjs from '@emailjs/browser';
+import { useNavigate } from 'react-router-dom';
 
 
 function ContactUs(){
 
-    const [senderEmail, setSenderEmail] = useState("");
-    const [emailBody, setEmailBody] = useState("");
-    const nav= useNavigate();
+    const form = useRef();
+    const nav = useNavigate();
 
-    async function submit(event) {
-        event.preventDefault();
-        try {
-          await axios.post("http://localhost:8080/api/contactUs", {
-            senderEmail: senderEmail,
-            emailBody: emailBody,
-          }).then((res) =>
-          {
-            console.log(res.data);
-            if(res.data === "Incorrect Sender Email")
-            {
-              alert("Incorrect Sender Email");
-            }
-            else if(res.data === "Email Successfully Sent!...")
-            {
-              alert("Email Successfully Sent!...");
-              nav('/Home');
-            }
-            else{
-              alert("Empty Message");
-            }
-          }, 
+    const sendEmail = (e) => {
+      e.preventDefault();
+      try{
+        emailjs
+          .sendForm('service_nsrymvm', 'template_sujuxeb', form.current, {
+            publicKey: '03ipzIz8Ys47YHjTv',
+          })
+
+          emailjs
+          .sendForm('service_m3o6wcp', 'template_rdmv38i', form.current, {
+            publicKey: '03ipzIz8Ys47YHjTv',
+          })
+          .then(
+            () => {
+              alert('SUCCESS!');
+              
+            },
+            (error) => {
+              console.log('FAILED...', error.text);
+            },
           );
-    
-        } catch (err) {
+        }catch(err){
           alert(err);
         }
-    
-      }
+    };
 
     return(
         <div>
@@ -48,21 +42,19 @@ function ContactUs(){
             <div className='ContactOwnerComponent'>
                 <h1><b>Contact Us</b></h1>
                     
-                    <div className='sendBox'>
+                    <form className='sendBox' ref={form}>
                         <input type="text" id="senderEmail" placeholder="  Enter Your Email Here"
-                        value={senderEmail} onChange={(event) => 
-                            setSenderEmail(event.target.value)}/>
+                        name="user_email"/>
 
                         <input id='receiverEmail'readOnly placeholder="  AcademicAdvisor@gmail.com"></input>
 
                         <input type="text" id="emailBody" placeholder="  Type Your message" 
-                        value={emailBody} onChange={(event) => 
-                            setEmailBody(event.target.value)}/>
+                        name="message"/>
                             
-                        <button className="contactSubmitBtn" type="Submit" onClick={submit}>
-                            <b>Submit</b>
+                        <button className="contactSubmitBtn" type="Submit" onClick={sendEmail}>
+                            <b>Send</b>
                         </button>
-                    </div>
+                    </form>
             </div>
         </div>
     

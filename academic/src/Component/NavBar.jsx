@@ -8,7 +8,7 @@ const NavBar = () => {
     const location = useLocation();
 
     const getButtonDetails = () => {
-        if(location.pathname==='/Welcome'){
+        if(location.pathname==='/'){
             return { text:"Login", action: () => nav('/Login')};
         }else if(location.pathname==='/AdminDashboard'){
             return { text:"Home", action: () => nav('/AdminDashboard')};
@@ -18,16 +18,16 @@ const NavBar = () => {
             return { text:"Home", action: () => nav('/AdvisorDashboard')};
         }
         else if(location.pathname==='/ContactUs'){
-            return { text:"Home", action: () => nav('/Welcome')};
+            return { text:"Home", action: () => nav('/')};
         }else if(location.pathname==='/AboutUs'){
-            return { text:"Home", action: () => nav('/Welcome')};
+            return { text:"Home", action: () => nav('/')};
         }
     }
 
     const { text, action } = getButtonDetails();
 
     async function aboutClick() {
-        nav("/About")
+        nav("/AboutUs")
     }
 
     async function contactUsClick() {
@@ -35,7 +35,7 @@ const NavBar = () => {
     }
 
     async function titleClick() {
-        nav("/Welcome")
+        nav("/")
     }
 
     return(
@@ -43,7 +43,7 @@ const NavBar = () => {
             <h1 id='title' onClick={titleClick}><b>AcademicAdvisor</b></h1>
             <ul>
                 <li id='homeBtn' onClick={action}><b>{text}</b></li>
-                <li id='aboutBtn' onClick={aboutClick}><b>About</b></li>
+                <li id='aboutBtn' onClick={aboutClick}><b>About Us</b></li>
                 <li id='contactUsBtn' onClick={contactUsClick}><b>Contact Us</b></li>
                 
             </ul>

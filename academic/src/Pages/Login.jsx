@@ -2,53 +2,60 @@ import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import "./Login.css";
 import axios from "axios";
-
+import bcrypt from 'bcryptjs-react';
+import salt from '../Security';
 
 const Login = () => {
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   
   let nav = useNavigate();
 
+  const hashPassword = (password) => {
+    // Hash the password using the provided salt
+    return bcrypt.hashSync(password, salt);
+  }
+
   async function submit(event) {
     event.preventDefault();
     try {
-      await axios.post("http://localhost:8080/api/users/login", {
+      const response = await axios.post("http://localhost:8080/api/users/login", {
         email: email,
-        password: password,
+        password: hashPassword(password),
       }
       ,
       {
         headers: {
-            Authorization: "", // Add the password as Basic Auth header
+          Authorization: "Basic " + btoa("user:password"), // Add the password as Basic Auth header
             "Content-Type": "application/json", // Ensure the content type is JSON
         },
         withCredentials: true,
       }
     )
-      .then((res) =>
+      .then((response) =>
       {
-        console.log(res.data);
-        if(res.data === "invalid username")
+        console.log(response.data);
+        if(response.data === "invalid username")
         {
           alert("invalid username");
         }
-        else if(res.data === "Login Successful, Redirect to admin dashboard")
+        else if(response.data === "Login Successful, Redirect to admin dashboard")
         {
           alert("Login Successful, Redirect to admin dashboard...");
           nav('/AdminDashboard');
         }
-        else if(res.data === "Login Successful, Redirct to advisor dashboard")
+        else if(response.data === "Login Successful, Redirct to advisor dashboard")
         {
           alert("Login Successful, Redirct to advisor dashboard...");
           nav('/StudentDashboard');
         }
-        else if(res.data === "Login Successful, Redirect to student dashboard")
+        else if(response.data === "Login Successful, Redirect to student dashboard")
         {
             alert("Login Successful, Redirect to student dashboard...");
             nav('/AdvisorDashboard');
         }
-        else if(res.data === "invalid password")
+        else if(response.data === "invalid password")
             {
               alert("Incorrect Password");
               nav('/Login');
@@ -68,7 +75,7 @@ const Login = () => {
     async function signup(event) {
       event.preventDefault();
       try {
-        nav('/UserSelection')
+        nav('/SignUp')
       } catch (err) {
         alert(err);
       }

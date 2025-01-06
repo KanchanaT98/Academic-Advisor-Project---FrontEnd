@@ -29,20 +29,29 @@ function AdvisorSignUp() {
       alert("Confirm password does not match");
     }else{
       try {
-        await axios.post("http://localhost:8080/api/register/account", {
+        const response = await axios.post("http://localhost:8080/api/users/register/advisor", {
           firstName: firstname,
           lastName:lastname,
-          field:field,
+          //field:field,
           email: email,
           password: password,
-        }).then((res) =>
+          role: "ADVISOR",
+        },
+        {
+          headers: {
+            Authorization: "Basic " + btoa("user:password"), // Add the password as Basic Auth header
+              "Content-Type": "application/json", // Ensure the content type is JSON
+          },
+          withCredentials: true,
+        }
+      ).then((response) =>
           {
-            console.log(res.data);
-        if(res.data === "Registration Successful"){
-          alert("Registation Successfully");
+            console.log(response.data);
+        if(response.data === "User Registration Successfull...!"){
+          alert("Registation Successfull");
           nav('/Login');
-        }else if(res.data === "Email Already Exists"){
-          alert("Email Already Exists");
+        }else if(response.data === "Email is Already Taken"){
+          alert("Email is Already Taken");
         }
       }
       );

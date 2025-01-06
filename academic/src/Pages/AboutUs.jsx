@@ -1,45 +1,60 @@
 import React from 'react';
 import './AboutUs.css';
+import NavBar from '../Component/NavBar';
 
 
 
 function AboutUs() {
     return (
       <div>
-        <div className="AboutUsTextBox">
-          <p className='AboutUsText'><h1><b>About Us</b></h1><br/><br/>
+        <NavBar/>
+        <div className='aboutUsContainer'>
+          <div className="AboutUsTextBox">
+            <h1 id='aboutUsTitle'><b>About Us</b></h1><br/>
+            <p className='AboutUsText'>
+          
+            Welcome to AcademicAdvisor, an innovative web application designed to simplify and enhance academic advising and management.<br/>
+            Our platform bridges the gap between students, advisors, and administrators, providing a seamless and user-friendly experience.
 
-                <b>Welcome to BoardingHub</b> – your trusted companion in navigating the challenges of student life! At BoardingHub, we're dedicated 
-                to simplifying the college experience by providing students with easy access to essential amenities and services.
-                <br/><br/>
-                <b>Our Mission:</b><br/>
-                Our mission is to empower college students by offering a comprehensive online platform that caters to their everyday needs. 
-                We strive to enhance the student experience by providing efficient solutions for accommodation, meals, transportation, and 
-                part-time job opportunities.
-                <br/><br/>
-                <b>What We Offer:</b><br/>
-                BoardingHub offers a one-stop solution for all your needs as a college student. Whether you're searching for a cozy place to 
-                stay, craving a delicious meal, planning your commute, or looking for part-time work, we've got you covered.
-                <br/><br/>
-                <b>Why Choose Us:</b><br/>
+            AcademicAdvisor<br/> is built with a powerful
+            combination of technologies: a robust backend developed using Spring Boot and a dynamic frontend powered by React.<br/>
+            Together, they deliver a fast, secure, and responsive application designed to meet the needs of academic institutions and organizations.<br/><br/>
+            <br/>
+            <div className='featureListClass'>Our Features :
+              <ul id='featuresList'>
+                <li>User-Friendly Interface: A sleek, intuitive design that ensures effortless navigation for students, advisors, and admins.</li>
+                <li>Comprehensive Management: Manage academic resources, user roles, and advising sessions with ease.</li>
+                <li>Data Security & Reliability: Built on a secure and scalable architecture to ensure your data is safe and always accessible.</li>
+                <li>Seamless Integration: Our application is designed to adapt to your institution’s workflows, making academic processes smoother and more efficient.</li>
+              </ul>
+              </div>
 
-                Convenient Location-Based Search: Find amenities and services near your university campus with ease.
-                User-Friendly Interface: Our platform is designed to be intuitive and easy to navigate, ensuring a seamless experience for all users.
-                Comprehensive Solutions: From accommodation to transportation, we offer a wide range of services to meet your needs.
-                Reliable Support: Our team is dedicated to providing exceptional customer support and assistance whenever you need it.
-                <br/><br/>
-                <b>Our Team:</b><br/>
-                BoardingHub is made possible by a passionate team of individuals who are committed to making a difference in the lives of college 
-                students. With expertise in technology, customer service, and student affairs, we work tirelessly to ensure that you have everything 
-                you need to thrive during your college years.
-                <br/><br/>
-                <b>Get in Touch:</b><br/>
-                Have questions or feedback? We'd love to hear from you! Feel free to reach out to our team via email or social media, and 
-                we'll be happy to assist you.
-                <br/><br/>
-                Thank you for choosing BoardingHub – your gateway to a smoother, more enjoyable college experience!</p>
+            Whether you’re a student looking for guidance or an advisor managing your tasks, AcademicAdvisor is here to simplify your academic journey.
+            <br/>We are committed to providing a platform that fosters better communication, improves decision-making, and supports academic success
+            <br/>for everyone involved.
+
+            <br/><br/><br/><b>Our Team :</b>
+            <div className='classTeamList'>
+              <ul id='teamList'>
+                <li>S/18/461 - D.M.L.Edirisooriya</li>
+                <li>S/18/517 - H.D.N.H.Silva</li>
+                <li>S/18/124 - P.A.K.Shalinda</li>
+                <li>S/18/404 - M.P.S.B.Jayasundara</li>
+                <li>S/18/530 - T.M.K.S.Thennakoon</li>
+                <li>S/18/444 - R.S.Meegamuwage</li>
+                <li>S/18/553 - C.S.Weerasinghe</li>
+                <li>S/18/438 - M.P.I.Madushani</li>
+                <li>S/18/402 - K.D.A.A.P.Jayasinghe</li>
+                <li>S/18/452 - K.P.Nelushan</li>
+                <li>S/18/179 - W.K.P.K.Weerakoon</li>
+                <li>S/18/555 - S.M.P.Weerawardena</li>
+              </ul>
+              </div>
+          </p>
+          </div>
         </div>
       </div>
+      
     )
   }
   

@@ -9,7 +9,7 @@ function Welcome () {
     const nav = useNavigate();
 
     async function handleClick() {
-        nav('/UserSelection');
+        nav('/SignUp');
     }
 
     return(

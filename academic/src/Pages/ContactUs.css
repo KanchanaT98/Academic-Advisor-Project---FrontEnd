@@ -1,15 +1,16 @@
 .ContactOwnerComponent{
     position: absolute;
-    left: 50px;
-    padding-top:30px;
-    padding-left: 50px;
-    background-color: white;
+    top: 150px;
+    left: 150px;
+    height: 60px;
+    width: 200px;
+    background-color: rgb(255, 255, 255);
 
 }
 
 #senderEmail{
     position: absolute;
-    top: 140px;
+    top: 100px;
     height: 40px;
     width: 1000px;
     justify-content: center;
@@ -17,7 +18,7 @@
 
 #receiverEmail{
     position: absolute;
-    top: 200px;
+    top: 160px;
     height: 40px;
     width: 1000px;
     justify-content: center;
@@ -25,8 +26,8 @@
 
 #emailBody{
     position: absolute;
-    top: 260px;
-    height: 200px;
+    top: 220px;
+    height: 150px;
     width: 1000px;
 
 }
@@ -41,6 +42,7 @@
     height: 45px;
     position: relative;
     left: 850px;
-    top: 400px;
+    top: 330px;
     padding: 3px;
+    cursor: pointer;
 }

@@ -1,0 +1,34 @@
+.aboutUsContainer{
+    position: absolute;
+    top: 150px;
+    width: 96%;
+    height: 100%;
+    padding-left: 50px;
+    padding-bottom: 50px;
+    font-family: sans-serif;
+    background-color: rgb(245, 247, 250);
+    text-shadow: none;
+}
+
+#aboutUsTitle{
+    text-align: left;
+}
+
+
+.AboutUsText{
+    font-size: larger;
+    text-align: justify;
+}
+
+#featuresList{
+    text-align: left;
+    font-size: medium;
+    text-shadow: none;
+    
+}
+
+#teamList{
+    text-shadow: none;
+    font-size: xx-small;
+    text-align: left;
+}
